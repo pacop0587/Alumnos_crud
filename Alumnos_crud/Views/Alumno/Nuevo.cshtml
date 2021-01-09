@@ -1,0 +1,45 @@
+﻿@model Alumnos_crud.Models.ViewModels.AlumnoViewModel
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@* Vista en la cual se agregan los registros nuevos para la tabla *@
+
+@using (Html.BeginForm("Nuevo","Alumno",FormMethod.Post)) {
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "red" })
+        </div>
+        <div>
+            @Html.LabelFor(d => d.Apellido_paterno)
+            @Html.TextBoxFor(d => d.Apellido_paterno, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Apellido_paterno, null, new { @class = "red" })
+        </div>
+        <div>
+            @Html.LabelFor(d => d.Apellido_materno)
+            @Html.TextBoxFor(d => d.Apellido_materno, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Apellido_materno, null, new { @class = "red" })
+        </div>
+        <div>
+            @Html.LabelFor(d => d.Calle)
+            @Html.TextBoxFor(d => d.Calle, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Calle, null, new { @class = "red" })
+        </div>
+        <div>
+            @Html.LabelFor(d => d.Colonia)
+            @Html.TextBoxFor(d => d.Colonia, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Colonia, null, new { @class = "red" })
+        </div>
+        <br />
+        <div>
+            <input value="Guardar" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+</div>
+}
+
